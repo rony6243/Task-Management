@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Management</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <div class="logo">
+          <div class="logo-icon">
+            <img src="images/logo.png" alt="">
+          </div>
+          <div>
+            <h2>Task Manager</h2>
+            <p>Manage your tasks</p>
+          </div>
+        </div>
+        <button class="close-sidebar" id="closeSidebar">✕</button>
+      </div>
+
+      <nav class="nav-links">
+        <button class="nav-link active" data-section="dashboard">Dashboard</button>
+        <button class="nav-link" data-section="add-task">Add Task</button>
+        <button class="nav-link" data-section="history">History</button>
+        <button class="nav-link" data-section="settings">Settings</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p>© 2026 Rony. All Rights Reserved . </p>
+      </div>
+    </aside>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main -->
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-btn" id="menuBtn">☰</button>
+          <div>
+            <h1 id="pageTitle">Dashboard</h1>
+            <p class="subtitle">Keep your daily work organized</p>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button class="top-btn" id="clearCompletedBtn">Clear Completed</button>
+        </div>
+      </header>
+
+      <!-- Dashboard -->
+      <section class="content-section active" id="dashboard">
+        <div class="stats-grid">
+          <div class="card stat-card">
+            <h3>Total Tasks</h3>
+            <p id="totalTasks">0</p>
+          </div>
+          <div class="card stat-card">
+            <h3>Pending Tasks</h3>
+            <p id="pendingTasks">0</p>
+          </div>
+          <div class="card stat-card">
+            <h3>Completed Tasks</h3>
+            <p id="completedTasks">0</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>Task List</h2>
+          </div>
+          <div class="task-list" id="taskList"></div>
+        </div>
+      </section>
+
+      <!-- Add Task -->
+      <section class="content-section" id="add-task">
+        <div class="card form-card">
+          <div class="card-header">
+            <h2 id="formHeading">Add New Task</h2>
+          </div>
+
+          <form id="taskForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="taskTitle">Title</label>
+                <input type="text" id="taskTitle" placeholder="Enter task title" required />
+              </div>
+
+              <div class="form-group">
+                <label for="taskDate">Date</label>
+                <input type="date" id="taskDate" required />
+              </div>
+
+              <div class="form-group">
+                <label for="taskPriority">Priority</label>
+                <select id="taskPriority" required>
+                  <option value="High">High</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Low">Low</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="primary-btn" id="submitBtn">Add Task</button>
+              <button type="button" class="secondary-btn hidden" id="cancelEditBtn">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- History -->
+      <section class="content-section" id="history">
+        <div class="card">
+          <div class="card-header">
+            <h2>Completed Task History</h2>
+          </div>
+          <div class="history-list" id="historyList"></div>
+        </div>
+      </section>
+
+      <!-- Settings -->
+      <section class="content-section" id="settings">
+        <div class="card settings-card">
+          <div class="settings-top">
+            <div class="big-check">✓</div>
+            <h2>Task Manager</h2>
+            <p>Version 1.0</p>
+          </div>
+
+          <div class="settings-actions">
+            <button class="danger-btn" id="clearAllDataBtn">Clear All Data</button>
+          </div>
+
+          <div class="settings-links">
+            <a href="#">Terms and Condition</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
